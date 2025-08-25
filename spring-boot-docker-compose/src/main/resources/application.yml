@@ -1,0 +1,32 @@
+spring:
+
+
+  application:
+    name: blog
+
+  datasource:
+    url: URI to a remote database
+    username: SA
+    password: ${DATABASE_PASSWORD}
+
+  kafka:
+
+    bootstrap-servers: URI to kafka servers
+
+    consumer:
+      group-id: ch.migrosonline
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties.spring.json.type.mapping: blogpost-update-event:ch.migrosonline.momentum.kafka.model.BlogPostUpdateEvent
+
+    security:
+      protocol: SASL_SSL
+      properties.sasl:
+        mechanism: PLAIN
+        jaas.config: |
+          org.apache.kafka.common.security.plain.PlainLoginModule required username='kafka' password='${KAFKA_PASSWORD}'
+
+  rabbitmq:
+    host: URI to remote RabbitMQ
+    port: 5672
+    username: rabbitmq
+    password: ${RABBIT_PASSWORD}

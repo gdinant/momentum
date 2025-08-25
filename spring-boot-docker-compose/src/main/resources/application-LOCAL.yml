@@ -1,0 +1,24 @@
+spring:
+
+  datasource:
+    url: jdbc:sqlserver://localhost;encrypt=false
+
+  docker.compose:
+    file: classpath:/compose.yml
+    lifecycle-management: start_and_stop
+    stop:
+      command: down
+      timeout: 1m
+
+  kafka:
+    bootstrap-servers: localhost:29092
+    security.protocol: PLAINTEXT
+
+  rabbitmq:
+    host: localhost
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:init.sql
+
