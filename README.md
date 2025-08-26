@@ -1,20 +1,5 @@
-# momentum
+# MOmentum
 
-## Pre-requisites
+Find here all source code related to blog posts on [MOmentum](https://dev.to/migrosonline).
 
-- Maven 3.x+
-- Java 21.x+
-
-## Environment Variables
-
-```bash
-export DATABASE_PASSWORD=Str0ngP4ssword
-export RABBIT_PASSWORD=Str0ngP4ssword
-```
-
-## Build & Launch
-
-```bash
-mvn clean package
-mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=LOCAL"
-```
+1. [How to deploy locally with no fuss using spring-boot-docker-compose](./spring-boot-docker-compose/README.md)
