@@ -1,17 +1,18 @@
 spring:
 
-
   application:
     name: blog
 
   datasource:
-    url: URI to a remote database
+    url: <URI_TO_A_REMOTE_DATABASE>
     username: SA
     password: ${DATABASE_PASSWORD}
 
+  docker.compose.enabled: false
+
   kafka:
 
-    bootstrap-servers: URI to kafka servers
+    bootstrap-servers: <URI_TO_A_REMOTE_KAFKA_SERVER>
 
     consumer:
       group-id: ch.migrosonline
@@ -26,7 +27,7 @@ spring:
           org.apache.kafka.common.security.plain.PlainLoginModule required username='kafka' password='${KAFKA_PASSWORD}'
 
   rabbitmq:
-    host: URI to remote RabbitMQ
+    host: <URI_TO_A_REMOTE_RABBITMQ_SERVER>
     port: 5672
     username: rabbitmq
     password: ${RABBIT_PASSWORD}

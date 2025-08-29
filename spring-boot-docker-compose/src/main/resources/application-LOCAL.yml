@@ -4,11 +4,11 @@ spring:
     url: jdbc:sqlserver://localhost;encrypt=false
 
   docker.compose:
+    enabled: true
     file: classpath:/compose.yml
-    lifecycle-management: start_and_stop
     stop:
       command: down
-      timeout: 1m
+      timeout: 10s
 
   kafka:
     bootstrap-servers: localhost:29092
@@ -21,4 +21,3 @@ spring:
     init:
       mode: always
       schema-locations: classpath:init.sql
-
